@@ -38,13 +38,11 @@ void main() {
                     String nameOfFile;
                     nameOfFile = sc.next();
                     if (nameOfFile.indexOf('/') == -1) {
-                        File name = new File(nameOfFile);
-                        fileNote.setFileNote(name);
+                        fileNote.setFileNote(nameOfFile);
                         isName = false;
                     } else {
                         System.out.println("Contain unacceptable characteristics");
                         logNote.writeLog("Contain unacceptable characteristics - " + nameOfFile);
-//                        sc.hasNext();
                     }
                 } while (isName);
                 fileNote.writeToNote();
