@@ -10,7 +10,7 @@ public class Log {
             printlog.println(dateLog + " " + message);
             printlog.close();
         } catch (RuntimeException | IOException e){
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 
