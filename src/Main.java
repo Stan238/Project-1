@@ -6,6 +6,9 @@ void main() {
     Log logNote = new Log();
     logNote.writeLog("Project1 run");
     boolean chooseMenu = true;
+    boolean isName;
+    Note fileNote = new Note();
+
     while ( chooseMenu) {
         Scanner sc = new Scanner(System.in);
         System.out.println("""
@@ -29,10 +32,7 @@ void main() {
                  * create file / open file
                  * get some note throw user's input
                  * close file*/
-
-                Note fileNote = new Note();
-
-                boolean isName = true;
+                isName = true;
                 do {
                     System.out.print("Enter file name: ");
                     String nameOfFile;
@@ -49,6 +49,25 @@ void main() {
                 logNote.writeLog("Write to file");
                 break;
             case 2:
+                /* get name file
+                 * check file is exist
+                 *  open file
+                 * read file
+                 * close file*/
+                isName = true;
+                do {
+                    System.out.print("Enter file name: ");
+                    String nameOfFile;
+                    nameOfFile = sc.next();
+                    if (nameOfFile.indexOf('/') == -1) {
+                        fileNote.setFileNote(nameOfFile);
+                        isName = false;
+                    } else {
+                        System.out.println("Contain unacceptable characteristics");
+                        logNote.writeLog("Contain unacceptable characteristics - " + nameOfFile);
+                    }
+                } while (isName);
+                fileNote.readNote();
                 logNote.writeLog("Read file");
                 break;
             case 3:
