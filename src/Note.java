@@ -1,12 +1,12 @@
 import java.io.File;
-import java.io.*;
+//import java.io.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Note {
     private File fileNote;
-    private Log logNote= new Log();
+    private final Log logNote= new Log();
 
 //   public File getFileNote() {
 //        return fileNote;

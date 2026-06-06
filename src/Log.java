@@ -10,13 +10,13 @@ public class Log {
             printlog.println(dateLog + " " + message);
             printlog.close();
         } catch (RuntimeException | IOException e){
-            System.out.println(e.toString());
+            System.err.println("e :"+ e);
         }
     }
 
 //not sure
-    public String toString(File name) throws UnsupportedEncodingException {
+  /*  public String toString(File name) throws UnsupportedEncodingException {
         String message = new String("Create file %d".getBytes(), name.getName());
         return message;
-    }
+    }*/
 }
