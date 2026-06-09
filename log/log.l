@@ -18,3 +18,7 @@ Tue Jun 09 09:21:14 EDT 2026 Write to file
 Tue Jun 09 09:21:30 EDT 2026 Read file
 Tue Jun 09 09:28:47 EDT 2026 Project1 run
 Tue Jun 09 09:28:56 EDT 2026 Unsuccessfully attempt wrote file 
+Tue Jun 09 10:40:47 EDT 2026 Project1 run
+Tue Jun 09 10:41:03 EDT 2026 Create file
+Tue Jun 09 10:41:36 EDT 2026 Write to file
+Tue Jun 09 10:41:42 EDT 2026 Read file

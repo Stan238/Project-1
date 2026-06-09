@@ -25,8 +25,15 @@ public class Note {
             Scanner sc = new Scanner(System.in);
             String answerCreate = sc.next();
             if(answerCreate.equals("yes")){
-                System.out.printf("Create file %s " , fileNote.getName());
-                logNote.writeLog("Create file");
+                try {
+                    if(fileNote.createNewFile()){
+                        System.out.printf("Create file %s " , fileNote.getName());
+                        logNote.writeLog("Create file");
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
             } else {
                 return false;
             }
