@@ -45,8 +45,11 @@ void main() {
                         logNote.writeLog("Contain unacceptable characteristics - " + nameOfFile);
                     }
                 } while (isName);
-                fileNote.writeToNote();
+                 if (fileNote.writeToNote()) {
                 logNote.writeLog("Write to file");
+                 } else {
+                     logNote.writeLog("Unsuccessfully attempt wrote file ");
+                 }
                 break;
             case 2:
                 /* get name file

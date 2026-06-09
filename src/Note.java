@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Scanner;
 //import java.io.FileWriter;
 //import java.io.IOException;
 //import java.io.PrintWriter;
@@ -16,11 +17,20 @@ public class Note {
         this.fileNote = new File("Notes/"+filename+".txt");
     }
 
-    public void writeToNote() {
+    public boolean writeToNote() {
 //        Check file exist, if not then it will create automatically and note in the log file
         if (!fileNote.exists()) {
-            System.out.printf("Create file %s " , fileNote.getName());
-            logNote.writeLog("Create file");
+            System.out.println("File not exist. Do you want to create file? (Enter 'yes')");
+//           Create file safely
+            Scanner sc = new Scanner(System.in);
+            String answerCreate = sc.next();
+            if(answerCreate.equals("yes")){
+                System.out.printf("Create file %s " , fileNote.getName());
+                logNote.writeLog("Create file");
+            } else {
+                return false;
+            }
+
         }
 
         try (FileWriter writer =new FileWriter(fileNote, true)){
@@ -34,9 +44,10 @@ public class Note {
         } catch( RuntimeException | IOException e) {
             logNote.writeLog(e.toString());
         }
+        return true;
 
     }
-
+// Reading from file
     public void readNote() {
       try (BufferedReader inputStream = new BufferedReader(new FileReader(fileNote))){
           String line;
