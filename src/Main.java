@@ -13,9 +13,11 @@ void main() {
         Scanner sc = new Scanner(System.in);
         System.out.println("""
                 Menu:\s
-                 1. Write to file
-                 2. Read file
-                 3. Exit""");
+                 1. List files
+                 2. Write
+                 3. Read
+                 4. Delete
+                 5. Exit""");
         System.out.print("Your selection:");
         int menuNumber;
         try {
@@ -27,6 +29,11 @@ void main() {
 
         switch (menuNumber) {
             case 1:
+                System.out.println("=== List files===");
+                fileNote.listFiles();
+                System.out.println("=== === === === ===");
+               break;
+            case 2:
                 /* get name file
                  * check file is exist
                  * create file / open file
@@ -51,12 +58,13 @@ void main() {
                      logNote.writeLog("Unsuccessfully attempt wrote file ");
                  }
                 break;
-            case 2:
+            case 3:
                 /* get name file
                  * check file is exist
                  *  open file
                  * read file
                  * close file*/
+//                TODO create methods to check name file and set name File Note
                 isName = true;
                 do {
                     System.out.print("Enter file name: ");
@@ -73,7 +81,24 @@ void main() {
                 fileNote.readNote();
                 logNote.writeLog("Read file");
                 break;
-            case 3:
+            case 4:
+                System.out.println("Do you want to delay file?");
+                isName = true;
+                do {
+                    System.out.print("Enter file name: ");
+                    String nameOfFile;
+                    nameOfFile = sc.next();
+                    if (nameOfFile.indexOf('/') == -1) {
+                        fileNote.setFileNote(nameOfFile);
+                        isName = false;
+                    } else {
+                        System.out.println("Contain unacceptable characteristics");
+                        logNote.writeLog("Contain unacceptable characteristics - " + nameOfFile);
+                    }
+                } while (isName);
+                fileNote.deleteNote();
+                break;
+            case 5:
                 System.out.println("Good buy,\n See you soon!");
                 chooseMenu = false;
                 sc.close();
