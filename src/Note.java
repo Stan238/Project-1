@@ -5,6 +5,7 @@ import java.nio.file.*;
 import java.nio.file.spi.FileTypeDetector;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Stream;
 //import java.io.FileWriter;
 //import java.io.IOException;
 //import java.io.PrintWriter;
@@ -81,12 +82,17 @@ public class Note {
     }
 
     public void listFiles() {
-       File derictoryNote = new File("Notes");
-
-
-       for(int index=0; index<derictoryNote.listFiles().length; index++ ){
-           System.out.println(derictoryNote.listFiles()[index].toString());
+//       try(Stream<Path> derictoryNote = Files.walk( Paths.get("Notes"))) {
+//
+//           derictoryNote.filter(Files::isRegularFile).forEach(System.out::println);
+//       } catch (IOException e) {
+//           e.printStackTrace();
+//       }
+        String[] listFiles = new File("Notes").list();
+               for(String nameFile : listFiles ){
+           System.out.println(nameFile.substring(0,nameFile.lastIndexOf('.')));
        }
+
     }
 
     public boolean deleteNote(){
