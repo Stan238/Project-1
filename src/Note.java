@@ -81,9 +81,14 @@ public class Note {
 //           e.printStackTrace();
 //       }
         String[] listFiles = new File("Notes").list();
+        if (listFiles != null){
                for(String nameFile : listFiles ){
            System.out.println(nameFile.substring(0,nameFile.lastIndexOf('.')));
        }
+        } else  {
+            IO.println("Files list is empty. Create your own file :)");
+        }
+
 
     }
 
