@@ -1,15 +1,7 @@
 import java.awt.*;
 import java.io.*;
-import java.net.URI;
 import java.nio.file.*;
-import java.nio.file.spi.FileTypeDetector;
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Stream;
-//import java.io.FileWriter;
-//import java.io.IOException;
-//import java.io.PrintWriter;
-//import java.io.File;
 
 public class Note {
     private File fileNote;
