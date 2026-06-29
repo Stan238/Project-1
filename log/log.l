@@ -39,3 +39,22 @@ Sun Jun 28 11:51:35 EDT 2026 Project1 run
 Sun Jun 28 11:52:07 EDT 2026 Project1 run
 Sun Jun 28 11:53:03 EDT 2026 Write to file
 Sun Jun 28 11:53:09 EDT 2026 Read file
+Sun Jun 28 17:42:39 EDT 2026 Project1 run
+Sun Jun 28 17:43:04 EDT 2026 Create file
+Sun Jun 28 17:43:17 EDT 2026 Write to file
+Sun Jun 28 17:43:52 EDT 2026 Read file
+Sun Jun 28 17:43:57 EDT 2026 Project1 stopped
+Sun Jun 28 18:06:43 EDT 2026 Project1 run
+Sun Jun 28 18:07:31 EDT 2026 Project1 run
+Sun Jun 28 18:07:58 EDT 2026 Project1 run
+Sun Jun 28 18:08:25 EDT 2026 Project1 run
+Sun Jun 28 18:08:52 EDT 2026 Project1 run
+Sun Jun 28 18:09:38 EDT 2026 Project1 run
+Sun Jun 28 18:47:38 EDT 2026 Project1 run
+Sun Jun 28 18:48:06 EDT 2026 Create file
+Sun Jun 28 18:48:20 EDT 2026 Write to file
+Sun Jun 28 18:48:44 EDT 2026 File huy.txtdeleted
+Sun Jun 28 18:50:47 EDT 2026 Create file
+Sun Jun 28 18:51:01 EDT 2026 Write to file
+Sun Jun 28 18:51:10 EDT 2026 Project1 stopped
+Sun Jun 28 19:48:02 EDT 2026 Project1 run

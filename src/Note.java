@@ -1,15 +1,14 @@
 import java.awt.*;
 import java.io.*;
 import java.nio.file.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Note {
     private File fileNote;
     private final Log logNote = new Log();
 
-//   public File getFileNote() {
-//        return fileNote;
-//    }
+
 
     public void setFileNote(String filename) {
         this.fileNote = new File("Notes/" + filename + ".txt");
@@ -74,23 +73,26 @@ public class Note {
     }
 
     public void listFiles() {
-//       try(Stream<Path> derictoryNote = Files.walk( Paths.get("Notes"))) {
-//
-//           derictoryNote.filter(Files::isRegularFile).forEach(System.out::println);
-//       } catch (IOException e) {
-//           e.printStackTrace();
-//       }
-        String[] listFiles = new File("Notes").list();
-        if (listFiles != null){
-               for(String nameFile : listFiles ){
-           System.out.println(nameFile.substring(0,nameFile.lastIndexOf('.')));
-       }
-        } else  {
-            IO.println("Files list is empty. Create your own file :)");
+        File directoryFile = new File("Notes");
+
+        if(directoryFile.exists()) {
+            String[] listFiles =  directoryFile.list();
+            if (listFiles.length > 0) {
+                for (String nameFile : listFiles) {
+                    System.out.println(nameFile.substring(0, nameFile.lastIndexOf('.')));
+                }
+            } else {
+                System.out.println("Files list is empty. Create your own file :)");
+            }
+        } else {
+
+              if (directoryFile.mkdir()){
+                  logNote.writeLog("Create directory");
+              }
+
         }
-
-
     }
+
 
     public boolean deleteNote(){
 
